@@ -8,7 +8,8 @@ const BookSchema = new Schema({
     summary: {type: String, required: true},
     isbn: {type: String, required: true},
     genre: [{type: Schema.Types.ObjectId, ref: "Genre"}],
-});
+},{collection: 'Collection0'},
+);
 
 BookSchema.virtual("url").get(function (){
     return `/catalog/book/${this._id}`;

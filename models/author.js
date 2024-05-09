@@ -7,7 +7,8 @@ const AuthorSchema = new Schema({
     family_name: {type: String, required: true, maxLength: 100},
     date_of_birth: {type: Date},
     date_of_death: {type: Date},
-});
+    },{collection: 'Collection0'},
+);
 
 AuthorSchema.virtual('name').get(function (){
     let fullname = "";
